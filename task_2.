@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+// Function to check if a number is a power of two using recursion
+bool isPowerOfTwo(int n) {
+    // Base cases
+    if (n == 1) {
+        return true;  // 2^0 = 1 is a power of two
+    } else if (n % 2 != 0 || n == 0) {
+        return false;  // If n is odd or zero, it's not a power of two
+    } else {
+        return isPowerOfTwo(n / 2);  // Recursively check the next division
+    }
+}
+
+int main() {
+    // Input
+    int N;
+    cin >> N;
+
+    // Check if N is a power of two and print the result
+    if (isPowerOfTwo(N)) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
